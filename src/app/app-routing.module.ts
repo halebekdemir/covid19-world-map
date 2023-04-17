@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ROUTING } from 'src/shared/ROUTING';
+import { ROUTING } from 'src/shared/routing';
 
 const routes: Routes = [
   {

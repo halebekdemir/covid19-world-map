@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ROUTING } from 'src/shared/ROUTING';
+import { ROUTING } from 'src/shared/routing';
 
 @Component({
   selector: 'app-not-found',

@@ -1,7 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ROUTING } from 'src/shared/ROUTING';
+import { ROUTING } from 'src/shared/routing';
 
 @Component({
   selector: 'app-country-detail',
