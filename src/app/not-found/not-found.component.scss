@@ -1,0 +1,32 @@
+.not-found {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   gap: 40px;
+   color: var(--text-color-3);
+   font-weight: 600;
+   &__content {
+      font-size: 200px;
+   }
+   &__text {
+      font-size: 30px;
+   }
+   &__home {
+      background-color: transparent;
+      border: none;
+
+   }
+}
+
+@media only screen and (max-width: 768px) {
+   .not-found {
+      &__content{
+         font-size: 100px;
+      }
+      &__text {
+         font-size: 20px;
+      }
+   }
+}

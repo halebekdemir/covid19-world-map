@@ -1,0 +1,105 @@
+:host {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    height: 100%;
+}
+
+.world-name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    background-color: var(--background-color-1);
+    border-radius: 4px;
+    padding: 8px;
+    &__text {
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--text-color-1);
+    }
+}
+
+.map {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 60px 0;
+    color: var(--text-color-2);
+    &__title {
+        margin: 0;
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+    }
+    &__desc {
+        margin: 20px 0 40px;
+        font-size: 18px;
+        &.-visible-mobile {
+            display: none;
+        }
+        &.-visible-desktop {
+            display: block;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        margin-bottom: 60px;
+        border-radius: 12px;
+        overflow-x: hidden;
+        svg {
+            stroke: var(--map-color-1);
+            g {
+                path {
+                    fill: var(--map-color-2);
+                    cursor: pointer;
+                    transition: fill .1s;  
+                }
+                &:hover {
+                    path {
+                        fill: var(--map-color-3);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .map {
+        align-items: flex-start;
+        margin: 10px 10px 0;
+        text-align: center;
+        overflow-x: hidden;
+        &__title {
+            font-size: 30px;
+        }
+        &__desc {
+            font-size: 14px;
+            margin-bottom: 20px;
+            &.-visible-mobile {
+                display: block;
+            }
+            &.-visible-desktop {
+                display: none;
+            }
+        }
+        &__content {
+            width: 100%;
+            overflow-x: scroll;
+            svg {
+                min-width: 1000px;
+            }
+        }
+    }
+}

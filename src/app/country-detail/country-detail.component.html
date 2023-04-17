@@ -1,0 +1,38 @@
+  <app-loading *ngIf="pageLoading;else pageContent"></app-loading>
+   <ng-template #pageContent>
+      <div class="error-msg" *ngIf="errorMsg != ''">
+         {{errorMsg}}
+      </div>
+      <div class="detail">
+         <div class="detail__left">
+            <h1 class="detail__left__title">
+               COVID-19 CORONAVIRUS <br>
+               <!-- <span class="colorful"></span> <br> -->
+               STATISTICS
+            </h1>
+            <button class="button-link" (click)="getGlobalStatistics()" *ngIf="covidData.location != globalOption">Get Global Statistics</button>
+            <button class="button-link" (click)="navigateWorldMap()">Back to World Map</button>
+         </div>
+         <div class="detail__content">
+            <h2 class="detail__content__title">{{covidData.location | uppercase}}</h2>
+            <div class="detail__content__inner">
+               <div class="detail__content__item">
+                  <span class="detail__content__item-text">Deaths</span>
+                  <span class="detail__content__item-value">{{covidData.deaths | number: '1.0-0'}}</span>
+               </div>
+               <div class="detail__content__item">
+                  <span class="detail__content__item-text">Confirmed</span>
+                  <span class="detail__content__item-value">{{covidData.confirmed | number: '1.0-0'}}</span>
+               </div>
+               <div class="detail__content__item">
+                  <span class="detail__content__item-text">Last Checked</span>
+                  <span class="detail__content__item-value">{{covidData.lastChecked | date}}</span>
+               </div>
+               <div class="detail__content__item">
+                  <span class="detail__content__item-text">Last Reported</span>
+                  <span class="detail__content__item-value">{{covidData.lastReported | date}}</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </ng-template>

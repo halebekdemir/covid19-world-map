@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --background-color-1: #F2E3DB;
+
+    --text-color-1: #1d1e2c;
+    --text-color-2: #F0F0F0;
+    --text-color-3: #2EC4B6;
+    --text-color-4: #79dfd6;
+
+    --map-color-1: #569DAA;
+    --map-color-2: #79dfd6;
+    --map-color-3: #249b90;
+
+    --loading-color-1: #03A9F4;
+    --loading-color-2: #FB6542;
+    --loading-color-3: #FFBB00;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    background-color: #1d1e2c;
+}
+
+body,
+button,
+a {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+.button-link {
+    color: var(--text-color-3);
+    font-size: 26px;
+    line-height: 26px;
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    cursor: pointer;
+    transition:  color .2s;
+    &:hover {
+        color: var(--text-color-4);
+    }
+}

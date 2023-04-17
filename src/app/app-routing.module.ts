@@ -1,7 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ROUTING } from 'src/shared/ROUTING';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: ROUTING.WORLDMAP,
+    pathMatch: "full"
+  },
+  {
+    path: ROUTING.WORLDMAP,
+    loadChildren: () => import('./world-map/world-map.module').then(m => m.WorldMapModule)
+  },
+  {
+    path: ROUTING.COUNTRY_DETAIL,
+    loadChildren: () => import('./country-detail/country-detail.module').then(m => m.CountryDetailModule)
+  },
+  { 
+    path: '**', 
+    pathMatch: 'full', 
+    loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
