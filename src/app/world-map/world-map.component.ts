@@ -1,6 +1,6 @@
 import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
-import { ROUTING } from 'src/shared/ROUTING';
+import { ROUTING } from 'src/shared/routing';
 @Component({
   selector: 'app-world-map',
   templateUrl: './world-map.component.html',
