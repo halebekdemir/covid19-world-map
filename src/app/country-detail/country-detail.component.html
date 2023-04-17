@@ -1,13 +1,9 @@
   <app-loading *ngIf="pageLoading;else pageContent"></app-loading>
    <ng-template #pageContent>
-      <div class="error-msg" *ngIf="errorMsg != ''">
-         {{errorMsg}}
-      </div>
-      <div class="detail">
+      <div class="detail" *ngIf="pageSuccess;else pageErrorContent">
          <div class="detail__left">
             <h1 class="detail__left__title">
                COVID-19 CORONAVIRUS <br>
-               <!-- <span class="colorful"></span> <br> -->
                STATISTICS
             </h1>
             <button class="button-link" (click)="getGlobalStatistics()" *ngIf="covidData.location != globalOption">Get Global Statistics</button>
@@ -35,4 +31,10 @@
             </div>
          </div>
       </div>
+      <ng-template #pageErrorContent>
+         <div class="error-msg">
+            {{errorMsg}}
+         </div>
+         <button class="button-link" (click)="navigateWorldMap()">Go to World Map</button>
+      </ng-template>
    </ng-template>

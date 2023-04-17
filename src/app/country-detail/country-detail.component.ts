@@ -25,6 +25,7 @@ export class CountryDetailComponent {
   globalOption:string = 'Global';
   counryNotFound:boolean = false;
   counryNotFoundTxt:string = '';
+  pageSuccess:boolean = true;
   errorMsg:string = '';
 
   constructor(
@@ -59,10 +60,14 @@ export class CountryDetailComponent {
     fetch(`https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total?country=${country}`, options)
       .then(response => response.json())
       .then(response => {
+        this.errorMsg = '';
         this.pageLoading = false;
+        this.pageSuccess = true;
         this.covidData = response.data;
       })
       .catch(err => {
+        this.pageLoading = false;
+        this.pageSuccess = false;
         this.errorMsg = err.message;
       });
   }

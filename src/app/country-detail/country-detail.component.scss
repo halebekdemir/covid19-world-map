@@ -90,3 +90,14 @@
       }
   }
 }
+
+.error-msg {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: var(--background-color-2);
+  max-width: 60%;
+  font-size: 24px;
+  color: var(--text-color-1);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
