@@ -70,6 +70,21 @@
                         fill: var(--map-color-3);
                     }
                 }
+                &.yellow {
+                    path {
+                        fill: var(--map-rate-color-1);
+                    }
+                }
+                &.orange {
+                    path {
+                        fill: var(--map-rate-color-2);
+                    }
+                }
+                &.red {
+                    path {
+                        fill: var(--map-rate-color-3);
+                    }
+                }
             }
         }
     }

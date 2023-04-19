@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CountryDetailRoutingModule } from './country-detail-routing.module';
 import { CountryDetailComponent } from './country-detail.component';
-import { LoadingModule } from 'src/shared/loading/loading.module';
+import { LoadingModule } from 'src/shared/components/loading/loading.module';
 
 
 @NgModule({

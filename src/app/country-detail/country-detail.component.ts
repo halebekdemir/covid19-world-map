@@ -1,6 +1,8 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { APIINFO } from 'src/shared/api-info';
+import { RequestMethod } from 'src/shared/enums/request-method';
 import { ROUTING } from 'src/shared/routing';
 
 @Component({
@@ -50,14 +52,10 @@ export class CountryDetailComponent {
   getCovidData(country:string) {
     this.pageLoading = true;
     const options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': 'e8967cfd7cmsh2f97689225aef49p1518e1jsn3ca18c6d4e4e',
-        'X-RapidAPI-Host': 'covid-19-coronavirus-statistics.p.rapidapi.com'
-      }
+      method: RequestMethod.GET,
+      headers: APIINFO.rapidApiHeaders
     };
-    
-    fetch(`https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total?country=${country}`, options)
+    fetch(APIINFO.apiUrl + country, options)
       .then(response => response.json())
       .then(response => {
         this.errorMsg = '';

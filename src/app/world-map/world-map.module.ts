@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { WorldMapRoutingModule } from './world-map-routing.module';
 import { WorldMapComponent } from './world-map.component';
+import { LoadingModule } from 'src/shared/components/loading/loading.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { WorldMapComponent } from './world-map.component';
   ],
   imports: [
     CommonModule,
-    WorldMapRoutingModule
+    WorldMapRoutingModule,
+    LoadingModule
   ]
 })
 export class WorldMapModule { }

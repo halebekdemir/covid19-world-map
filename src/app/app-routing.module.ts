@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CountryRatesResolver } from 'src/shared/resolver/contry-rates/country-rates.resolver';
 import { ROUTING } from 'src/shared/routing';
 
 const routes: Routes = [
@@ -10,7 +11,10 @@ const routes: Routes = [
   },
   {
     path: ROUTING.WORLDMAP,
-    loadChildren: () => import('./world-map/world-map.module').then(m => m.WorldMapModule)
+    loadChildren: () => import('./world-map/world-map.module').then(m => m.WorldMapModule),
+    resolve: {
+      data: CountryRatesResolver
+    }
   },
   {
     path: ROUTING.COUNTRY_DETAIL,

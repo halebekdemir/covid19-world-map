@@ -3,6 +3,11 @@
 :root {
     --background-color-1: #F2E3DB;
     --background-color-2: #FF3333;
+    --background-color-3: #1d1e2c;
+
+    --map-rate-color-1: #FFD93D;
+    --map-rate-color-2: #FF6000;
+    --map-rate-color-3: #ED2B2A;
 
     --text-color-1: #1d1e2c;
     --text-color-2: #F0F0F0;
@@ -30,7 +35,7 @@ body {
 }
 body {
     margin: 0;
-    background-color: #1d1e2c;
+    background-color: var(--background-color-3);
 }
 
 body,
